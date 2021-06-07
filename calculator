@@ -1,0 +1,87 @@
+package com.example.calculator
+
+import androidx.appcompat.app.AppCompatActivity
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        val etNumber1 = findViewById<EditText>(R.id.tvNumber1)
+        val etNumber2 = findViewById<EditText>(R.id.tvNumber2)
+        val btnAddiction = findViewById<Button>(R.id.btnAddittion)
+        val btnModulus = findViewById<Button>(R.id.btnModulus)
+        val btnSubtraction = findViewById<Button>(R.id.btnsubstration)
+        val btnMultiply = findViewById<Button>(R.id.btnmultiply)
+        val tvTotal = findViewById<TextView>(R.id.tvTotal)
+
+        btnAddiction.setOnClickListener {
+            if (etNumber1.text.toString() == "") {
+                Toast.makeText(baseContext, "Enter a number", Toast.LENGTH_LONG).show()
+            } else if (etNumber2.text.toString() == "") {
+                Toast.makeText(baseContext, "Enter a number", Toast.LENGTH_LONG).show()
+            }
+            else {
+                val Number1 = etNumber1.text.toString().toInt()
+                val number2 = etNumber2.text.toString().toInt()
+                val additionTotal = Number1 + Number1
+                tvTotal.text = "Answer:${additionTotal}"
+            }
+        }
+
+        btnSubtraction.setOnClickListener {
+            if (etNumber1.text.toString() == "") {
+                Toast.makeText(baseContext, "Enter a number", Toast.LENGTH_LONG).show()
+
+            }else if (etNumber2.text.toString()=="" ){
+                Toast.makeText(baseContext,"Enter a number",Toast.LENGTH_LONG).show()
+            }
+            else{
+                val Number1=etNumber1.text.toString().toInt()
+                val Number2=etNumber2.text.toString().toInt()
+                val subtractionTotal=Number1-Number2
+                tvTotal.text="Total:${subtractionTotal}"
+            }
+        }
+        btnMultiply.setOnClickListener{
+            if (etNumber1.text.toString()==""){
+                Toast.makeText(baseContext,"Enter a number",Toast.LENGTH_LONG).show()
+    }
+            else if(etNumber1.text.toString()==""){
+                Toast.makeText(baseContext,"Enter a number",Toast.LENGTH_LONG).show()
+            }
+            else{
+                val Number1=etNumber1.text.toString().toInt()
+                val Number2=etNumber2.text.toString().toInt()
+                val multiplyTotal=Number1*Number2
+                tvTotal.text="Total:${multiplyTotal}"
+            }
+        }
+         btnModulus.setOnClickListener {
+            if (etNumber1.text.toString() == "") {
+                Toast.makeText(baseContext, "Enter a number", Toast.LENGTH_LONG).show()
+
+                } else if (etNumber2.text.toString() == "") {
+                Toast.makeText(baseContext, "Enter a number", Toast.LENGTH_LONG).show()
+            }
+            else {
+                val Number1 = etNumber1.text.toString().toInt()
+                val Number2 = etNumber2.text.toString().toInt()
+                val modulusTotalTotal = Number1 % Number2
+                tvTotal.text = "Total:${btnModulus}"
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
